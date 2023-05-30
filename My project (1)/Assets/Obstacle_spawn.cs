@@ -5,7 +5,6 @@ using UnityEngine;
 public class Obstacle_spawn : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Rigidbody2D rb;
     public GameObject obstacle;
     public GameObject Mama;
     void Start()
@@ -21,6 +20,8 @@ public class Obstacle_spawn : MonoBehaviour
     }
     void spawn()
     {
-        Instantiate(obstacle, Mama.transform.position, Quaternion.identity, Mama.transform);
+        float a = Random.Range(-3f, 2f);
+        
+        Instantiate(obstacle, new Vector3(Mama.transform.position.x,a,0), Quaternion.identity, Mama.transform);
     }
 }
